@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Admin Login</title>
+        <style>
+            .C1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <select class="C1" id = "role">
+            <option value = "user">User</option>
+            <option value = "admin">Admin</option>
+        </select>
+        <br><br>
+            <input type="text" id="username" placeholder ="Enter username"><br><br>
+            <input type="password" id="password" placeholder ="Enter password"><br><br>
+            <button onclick="login()">login</button>
+            <script>
+                function login(){
+                    
+                    
+                    let role = document.getElementById("role").value;
+                    let user = document.getElementById("username").value;
+                    let pass = document.getElementById("password").value;
+                    fetch("user.txt")
+                    .then(res => res.text())
+                    .then(data =>{
+                        let lines = data.split("\n");
+                        let found =  true;
+                        for(let line of lines){
+                            let parts = line.trim().split("|");
+                            if(user == parts[0] && pass == parts[1]&& role == parts[2]){
+                                if(role == "admin"){
+                                    window.location.href = "admin_dashboard.html";
+                                }
+                                else{
+                                    window.location.href = "user_dashboard.html";
+                                }
+                            }
+                        }
+                        
+                    if(!found) alert("invalid login");
+                    });
+                }
+
+                </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<h3>Welcome Admin</h3>
+
+<br>
+
+<button onclick="deleteBook()">Delete Book</button>
+
+<script>
+function deleteBook(){
+
+fetch("/deleteBook")
+.then(res => res.text())
+.then(data => {
+alert(data);
+})
+.catch(err=>{
+alert("Server not running");
+});
+
+}
+</script>
+</body>
+</html>

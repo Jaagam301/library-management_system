@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Library Management System</title>
+        <link rel = "stylesheet" herf="style.css">
+    </head>
+    <body>
+        <h1>Library Management System</h1>
+        <h2> Select Login Type</h2>
+        <button onclick="admin_login()">admin login</button>
+        <button onclick="user_login()">>User login</button>
+        <script>
+            function selectRole(role){
+                localStorage.setItem("role",role);
+                if(role == "admin")
+                window.location.href="admin_login.html";
+                else
+                window.location.href="user_login.html";
+            }
+            </script>
+    </body>
+</html>

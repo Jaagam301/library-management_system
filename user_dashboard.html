@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+                background-image: url("image.jpg");
+            }
+            h1{
+                font-size: 60px;
+                color: antiquewhite;
+            }
+            h3{
+                font-size: 40px;
+            }
+            button{
+                border-radius: 10px;
+                font-size:20px;
+                
+            }
+
+        </style>
+    </head>
+<body>
+
+<h1>User Dashboard</h1>
+
+<h3>Welcome User</h3>
+
+<br>
+
+<button id="b1"onclick="viewProfile()">View Profile</button>
+<br><br>
+
+<button id="b2" onclick="changePassword()">Change Password</button>
+<br><br>
+
+<button id="b3" onclick="viewData()">View Data</button>
+<br><br>
+
+<button id="b4" onclick="logout()">Logout</button>
+
+<script>
+function viewData()
+{
+alert("User Data Page");
+}
+
+function logout()
+{
+window.location.href="login.html";
+}
+
+</script>
+
+</body>
+</html>
